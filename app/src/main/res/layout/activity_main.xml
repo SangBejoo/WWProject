@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include layout="@layout/content_main" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:paddingTop="@dimen/small_grid_material_design_4dp"
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:menu="@menu/menu_bottom_navigation" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/animation_icon"
+        android:layout_width="@dimen/animation_icon_size"
+        android:layout_height="@dimen/animation_icon_size"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/animation_icon_margin_bottom"
+        android:layout_marginLeft="@dimen/animation_icon_margin_left"
+        android:layout_marginStart="@dimen/animation_icon_margin_left"
+        android:src="@drawable/anim_menu" />
+
+</android.support.design.widget.CoordinatorLayout>

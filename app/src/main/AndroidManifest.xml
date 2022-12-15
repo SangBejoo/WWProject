@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.WatchW.inventory">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:fullBackupContent="@xml/backup_descriptor"
+        android:theme="@style/AppTheme">
+        <!-- Launch mode "singleTop": if an instance of the activity already exists at the top of
+        the target task, the system routes the intent to that instance through a call to its
+        onNewIntent() method, rather than creating a new instance of the activity. -->
+        <activity
+            android:name="com.example.WatchW.inventory.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- Receives the search request -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <!-- No category needed, because the Intent will specify this class component-->
+            </intent-filter>
+            <!-- Points to searchable meta data -->
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name="com.example.WatchW.inventory.EditorActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.example.WatchW.inventory.MainActivity"
+            tools:targetApi="jelly_bean">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.WatchW.inventory.MainActivity" />
+        </activity>
+
+        <provider
+            android:name="com.example.WatchW.inventory.ProductProvider"
+            android:authorities="com.example.WatchW.inventory"
+            android:enabled="true"
+            android:exported="true" />
+
+        <!-- Points to searchable activity so the whole app can invoke search -->
+        <meta-data
+            android:name="android.app.default_searchable"
+            android:value="..MainActivity" />
+
+    </application>
+
+</manifest>

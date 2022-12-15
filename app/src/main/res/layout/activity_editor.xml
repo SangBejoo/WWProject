@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Using scroll view to support smaller screens -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/double_grid_material_design_16dp"
+        android:paddingTop="@dimen/double_grid_material_design_16dp">
+
+        <LinearLayout
+            style="@style/editor_linear_line"
+            android:layout_marginTop="@dimen/double_grid_material_design_16dp">
+
+            <ImageView
+                android:layout_width="@dimen/icon_height_28dp"
+                android:layout_height="@dimen/icon_height_28dp"
+                android:layout_gravity="bottom"
+                android:layout_marginRight="@dimen/quadruple_grid_material_design_32dp"
+                android:src="@drawable/information_outline"
+                android:tint="@color/colorPrimaryDark"
+                tools:ignore="ContentDescription,RtlHardcoded" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/product_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/double_grid_material_design_16dp">
+
+                <EditText
+                    android:id="@+id/edit_product_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/item_name"
+                    android:inputType="text" />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/editor_linear_line">
+
+            <View style="@style/editor_view" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/product_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edit_product_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/model_no"
+                    android:inputType="text" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout style="@style/editor_linear_line">
+
+            <ImageView
+                android:layout_width="@dimen/icon_height_28dp"
+                android:layout_height="@dimen/icon_height_28dp"
+                android:layout_gravity="bottom"
+                android:layout_marginRight="@dimen/quadruple_grid_material_design_32dp"
+                android:src="@drawable/cart"
+                android:tint="@color/colorPrimaryDark"
+                tools:ignore="ContentDescription,RtlHardcoded" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/product_price"
+                android:layout_width="@dimen/layout_width_small_108dp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edit_product_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/price_pcs"
+                    android:inputType="numberDecimal" />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/large_padding_60dp"
+            tools:ignore="RtlHardcoded,RtlSymmetry">
+
+            <View style="@style/editor_view" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/product_quantity"
+                android:layout_width="@dimen/layout_width_small_108dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/double_grid_material_design_16dp">
+
+                <EditText
+                    android:id="@+id/edit_product_quantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/quantity"
+                    android:inputType="number" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/minus_button"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/rounded_corner_left"
+                android:text="-"
+                android:textSize="@dimen/font_h6_material_design_20sp"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/plus_button"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/rounded_corner_right"
+                android:text="+"
+                android:textSize="@dimen/font_h6_material_design_20sp"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/editor_linear_line">
+
+            <ImageView
+                android:id="@+id/call_supplier"
+                android:layout_width="@dimen/icon_height_28dp"
+                android:layout_height="@dimen/icon_height_28dp"
+                android:layout_gravity="bottom"
+                android:layout_marginRight="@dimen/quadruple_grid_material_design_32dp"
+                android:src="@drawable/clipboard_text"
+                android:tint="@color/colorPrimaryDark"
+                tools:ignore="ContentDescription,RtlHardcoded" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/product_shelf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edit_product_shelf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/shelf_no"
+                    android:inputType="text" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout style="@style/editor_linear_line">
+
+            <View style="@style/editor_view" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/product_supplier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edit_product_supplier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/supplier_code"
+                    android:inputType="number" />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/editor_linear_line">
+
+            <View style="@style/editor_view" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/product_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edit_product_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/supplier_phone"
+                    android:inputType="text"
+                    tools:ignore="TextFields" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/quadruple_grid_material_design_32dp">
+
+            <Button
+                android:id="@+id/button_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/button_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/save"
+                tools:ignore="ButtonStyle" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
