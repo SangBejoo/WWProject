@@ -6,12 +6,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.WatchW.inventory.ProductContract.ProductEntry;
 
-// When you use SQLiteOpenHelper class to obtain references to your database, the system performs
-// the potentially long-running operations of creating and updating the database only when needed
-// and not during app startup.
+
 
 class ProductDbHelper extends SQLiteOpenHelper {
-    // If you change the database schema, you must increment the database version.
+
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "warehouse.db";
 
@@ -20,8 +18,7 @@ class ProductDbHelper extends SQLiteOpenHelper {
     }
 
     public void onCreate(SQLiteDatabase db) {
-        // Create a String that contains the SQL statement to create the table
-        // Note that phone no. is a text, to be able to quickly copy & paste from a supplier website
+
         String SQL_CREATE_PRODUCTS_TABLE = "CREATE TABLE " + ProductEntry.TABLE_NAME + " ("
                 + ProductEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + ProductEntry.COLUMN_PRODUCT_NAME + " TEXT NOT NULL, "
@@ -33,11 +30,11 @@ class ProductDbHelper extends SQLiteOpenHelper {
                 + ProductEntry.COLUMN_PRODUCT_PHONE + " TEXT, "
                 + ProductEntry.COLUMN_PRODUCT_DATESTAMP + " TEXT NOT NULL);";
 
-        // Execute the SQL statement
+
         db.execSQL(SQL_CREATE_PRODUCTS_TABLE);
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // The database is still at version 1, so there's nothing to do be done here.
+
     }
 }

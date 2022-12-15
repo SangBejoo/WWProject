@@ -8,7 +8,7 @@ import android.util.Log;
 
 import java.lang.reflect.Field;
 
-// Helper class to disable default shift mode for a BottomNavigationView
+
 
 class BottomNavigationViewHelper {
     @SuppressLint("RestrictedApi")
@@ -21,9 +21,9 @@ class BottomNavigationViewHelper {
             shiftingMode.setAccessible(false);
             for (int i = 0; i < menuView.getChildCount(); i++) {
                 BottomNavigationItemView item = (BottomNavigationItemView) menuView.getChildAt(i);
-                //noinspection RestrictedApi
+
                 item.setShiftingMode(false);
-                //noinspection RestrictedApi
+
                 item.setChecked(item.getItemData().isChecked());
             }
         } catch (NoSuchFieldException e) {
